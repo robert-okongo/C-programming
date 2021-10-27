@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 3
+int stack_arr[MAX];
+int top=-1;
+int push(int data)
+{
+	if(top==MAX-1)
+	{
+	printf("stack is full \n");
+	exit(1);
+	}
+	else
+	{
+		top=top+1;
+		stack_arr[top]=data;
+	}
+}
+int pop()
+{
+	int value;
+	if(top==-1)
+	{
+		printf("stack is empty");
+		return value;
+	}
+	else
+	{
+		top=top-1;
+	    value=stack_arr[top];
+		return value;
+		
+	}
+}
+void print()
+{
+	int i;
+	if(top==-1)
+	{
+		printf("stack is empty \n");
+	}
+	else
+	{
+		for(i=top; i>=0; i--)
+		{
+			printf("%d ", stack_arr[i]);
+			printf("\n");
+		}
+	}
+}
+int main()
+{
+	int data;
+	push(3);
+	push(7);
+	push(9);
+	data=pop();
+	data=pop();
+	print();
+}
+
